@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Package } from "./package";
 
 @Component({
   selector: 'app-package',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PackageComponent implements OnInit {
 
-  constructor() { }
+  @Input() package: Package;
+
+  constructor() {
+    this.package = new Package();
+  }
 
   ngOnInit(): void {
   }
