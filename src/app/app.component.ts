@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { User } from "./components/user/user";
+import {
+  UserService } from "./components/user/user.service";
 
 @Component({
   selector: 'app-root',
@@ -7,6 +10,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  marsId = 'ako-18';
+  user: User;
+
+  constructor() {
+    this.user = new UserService().user;
+  }
 
 }
