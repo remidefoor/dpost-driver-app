@@ -1,1 +1,19 @@
-<app-package *ngFor="let pkg of packages" [package]="pkg"></app-package>
+<section>
+  <select id="range" name="range">
+    <option value="1">1</option>
+    <option value="5">5</option>
+    <option value="10">10</option>
+    <option value="15">15</option>
+    <option value="50">50</option>
+    <option value="100">100</option>
+  </select>
+  <label for="range">km</label>
+
+  <input type="button" value="Show nearby packages">
+
+  <p>Found {{ packages.length }} {{ packages.length === 1 ? 'package' : 'packages' }} in range</p>
+
+  <ul>
+    <app-package *ngFor="let pkg of packages" [package]="pkg"></app-package>
+  </ul>
+</section>
