@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PackageComponent } from './components/package/package.component';
 import { PackagesComponent } from './components/packages/packages.component';
+import { NotificationsComponent } from './components/notifications/notifications.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PackageComponent,
-    PackagesComponent
+    PackagesComponent,
+    NotificationsComponent
   ],
   imports: [
     BrowserModule,

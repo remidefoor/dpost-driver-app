@@ -1,0 +1,12 @@
+<section>
+  <h3>Notifications</h3>
+
+  <input type="button" value="Clear all">
+
+  <ol>
+    <li *ngFor="let notification of notifications">
+      {{ notification }}
+      <span class="material-symbols-rounded">close</span>
+    </li>
+  </ol>
+</section>
