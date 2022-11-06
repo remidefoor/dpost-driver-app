@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Package } from "./package";
 
 @Component({
-  selector: 'app-package',
-  templateUrl: './package.component.html',
-  styleUrls: ['./package.component.css']
+  selector: 'app-package-card',
+  templateUrl: './package-card.component.html',
+  styleUrls: ['./package-card.component.css']
 })
-export class PackageComponent implements OnInit {
+export class PackageCardComponent implements OnInit {
 
   @Input() package: Package;
 
