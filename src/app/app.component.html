@@ -1,4 +1,4 @@
-<header class="hero is-small">
+<header class="hero is-light is-small">
   <div class="hero-body">
     <h1 class="title is-1">dPost Driver</h1>
 
@@ -10,7 +10,16 @@
   <router-outlet></router-outlet>
 </main>
 
-<nav>
-  <span class="material-symbols-rounded" routerLink="/notifications">notifications</span>
-  <span class="material-symbols-rounded" routerLink="/">package</span>
+<nav class="navbar is-fixed-bottom is-primary">
+  <div class="navbar-menu is-active">
+    <div class="navbar-start">
+      <div class="navbar-item is-expanded is-tab icon is-large">
+        <i class="material-symbols-rounded" routerLink="/notifications">notifications</i>
+      </div>
+
+      <div class="navbar-item is-expanded is-tab icon is-large">
+        <i class="material-symbols-rounded" routerLink="/">package</i>
+      </div>
+    </div>
+  </div>
 </nav>
