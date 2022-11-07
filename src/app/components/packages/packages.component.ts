@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Package } from "../package/package";
+import { Package } from "../package-card/package";
 import { PackagesService } from "./packages.service";
 
 @Component({

@@ -1,4 +1,4 @@
-import { Package } from "../package/package";
+import { Package } from "../package-card/package";
 
 export class PackagesService {
   packages: Package[];
