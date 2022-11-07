@@ -23,6 +23,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/reset.css",
               "node_modules/bulma/css/bulma.css",
               "src/styles.css"
             ],
