@@ -11,9 +11,9 @@
 
   <input type="button" value="Show nearby packages">
 
-  <p>Found {{ packages.length }} {{ packages.length === 1 ? 'package' : 'packages' }} in range</p>
+  <p class="block">Found {{ packages.length }} {{ packages.length === 1 ? 'package-card' : 'packages' }} in range</p>
 
-  <ul>
-    <app-package-card *ngFor="let pkg of packages" [package]="pkg"></app-package-card>
-  </ul>
+  <div class="columns is-multiline is-centered is-vcentered">
+    <app-package-card class="column is-one-quarter-desktop is-one-third" *ngFor="let pkg of packages" [package]="pkg"></app-package-card>
+  </div>
 </section>
