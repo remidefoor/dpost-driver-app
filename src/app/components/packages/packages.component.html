@@ -1,19 +1,16 @@
-<section>
-  <select id="range">
-    <option value="1">1</option>
-    <option value="5">5</option>
-    <option value="10">10</option>
-    <option value="15">15</option>
-    <option value="50">50</option>
-    <option value="100">100</option>
+<div class="select is-primary">
+  <select id="range" name="range">
+    <option value="1">1 km</option>
+    <option value="5">5 km</option>
+    <option value="10">10 km</option>
+    <option value="15">15 km</option>
+    <option value="50">50 km</option>
+    <option value="100">100 km</option>
   </select>
-  <label for="range">km</label>
+</div>
 
-  <input type="button" value="Show nearby packages">
+<p class="block">Found {{ packages.length }} {{ packages.length === 1 ? 'package-card' : 'packages' }} in range</p>
 
-  <p class="block">Found {{ packages.length }} {{ packages.length === 1 ? 'package-card' : 'packages' }} in range</p>
-
-  <div class="columns is-multiline is-centered is-vcentered">
-    <app-package-card class="column is-one-quarter-desktop is-one-third" *ngFor="let pkg of packages" [package]="pkg"></app-package-card>
-  </div>
-</section>
+<div class="columns is-multiline is-centered is-vcentered">
+  <app-package-card class="column is-one-quarter-desktop is-one-third" *ngFor="let pkg of packages" [package]="pkg"></app-package-card>
+</div>
