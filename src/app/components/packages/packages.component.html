@@ -12,5 +12,9 @@
 <p class="block">Found {{ packages.length }} {{ packages.length === 1 ? 'package-card' : 'packages' }} in range</p>
 
 <div class="columns is-multiline is-centered is-vcentered">
-  <app-package-card class="column is-one-quarter-desktop is-one-third" *ngFor="let pkg of packages" [package]="pkg"></app-package-card>
+  <app-package-card class="column is-one-quarter-desktop is-one-third"
+                    *ngFor="let pkg of packages"
+                    [package]="pkg"
+                    (click)="displayPackage(pkg)">
+  </app-package-card>
 </div>

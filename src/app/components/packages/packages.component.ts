@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Package } from "../package-card/package";
-import { PackagesService } from "./packages.service";
+import { Router } from '@angular/router';
+import { Package } from '../package/package';
+import { PackagesService } from './packages.service';
 
 @Component({
   selector: 'app-packages',
@@ -12,12 +13,16 @@ export class PackagesComponent implements OnInit {
   packagesService: PackagesService;
   packages: Package[];
 
-  constructor() {
+  constructor(private router: Router) {
     this.packagesService = new PackagesService();
     this.packages = this.packagesService.packages;
   }
 
   ngOnInit(): void {
+  }
+
+  displayPackage(pkg: Package): void {
+    this.router.navigate(['/packages', pkg.id]);
   }
 
 }

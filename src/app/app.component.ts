@@ -9,10 +9,12 @@ import { UserService } from "./components/user/user.service";
 })
 export class AppComponent {
 
+  userService: UserService;
   user: User;
 
   constructor() {
-    this.user = new UserService().user;
+    this.userService = new UserService();
+    this.user = this.userService.user;
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Package } from "./package";
+import { Package } from '../package/package';
 
 @Component({
   selector: 'app-package-card',
@@ -8,10 +8,9 @@ import { Package } from "./package";
 })
 export class PackageCardComponent implements OnInit {
 
-  @Input() package: Package;
+  @Input() package: Package | undefined;
 
   constructor() {
-    this.package = new Package();
   }
 
   ngOnInit(): void {

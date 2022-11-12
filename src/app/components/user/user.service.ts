@@ -2,13 +2,13 @@ import { User } from "./user";
 
 export class UserService {
 
-  user: User;
+  readonly user: User;
 
   constructor() {
-    this.user = new User(this.#getUserId());
+    this.user = new User(this.getUserId());
   }
 
-  #getUserId(): string {
+  private getUserId(): string {
     return 'ako-18';
   }
 

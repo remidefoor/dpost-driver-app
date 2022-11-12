@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from "@angular/router";
 import {PackagesComponent} from "./components/packages/packages.component";
+import { PackageComponent } from "./components/package/package.component";
+import { Package } from './components/package/package';
 import { NotificationsComponent } from "./components/notifications/notifications.component";
 
 const routes: Routes = [
-  { path: '', component: PackagesComponent },
-  { path: 'notifications', component: NotificationsComponent }
+  { path: 'packages', component: PackagesComponent },
+  { path: 'packages/:packageId', component: PackageComponent },
+  { path: 'notifications', component: NotificationsComponent },
+  { path: '', redirectTo: '/packages', pathMatch: 'full' }
 ];
 
 @NgModule({
