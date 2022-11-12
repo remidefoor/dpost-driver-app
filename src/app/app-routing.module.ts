@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from "@angular/router";
-import {PackagesComponent} from "./components/packages/packages.component";
-import { PackageComponent } from "./components/package/package.component";
-import { Package } from './components/package/package';
-import { NotificationsComponent } from "./components/notifications/notifications.component";
+import { Routes, RouterModule } from '@angular/router';
+import {PackagesComponent} from './components/packages/packages.component';
+import { PackageComponent } from './components/package/package.component';
+import { NotificationsComponent } from './components/notifications/notifications.component';
 
 const routes: Routes = [
   { path: 'packages', component: PackagesComponent },

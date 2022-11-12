@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Package } from '../package/package';
 
 @Component({
@@ -6,14 +6,11 @@ import { Package } from '../package/package';
   templateUrl: './package-card.component.html',
   styleUrls: ['./package-card.component.css']
 })
-export class PackageCardComponent implements OnInit {
+export class PackageCardComponent {
 
   @Input() package: Package | undefined;
 
   constructor() {
-  }
-
-  ngOnInit(): void {
   }
 
 }

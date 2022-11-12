@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Package } from '../package/package';
 import { PackagesService } from './packages.service';
@@ -8,7 +8,7 @@ import { PackagesService } from './packages.service';
   templateUrl: './packages.component.html',
   styleUrls: ['./packages.component.css']
 })
-export class PackagesComponent implements OnInit {
+export class PackagesComponent {
 
   packagesService: PackagesService;
   packages: Package[];
@@ -16,9 +16,6 @@ export class PackagesComponent implements OnInit {
   constructor(private router: Router) {
     this.packagesService = new PackagesService();
     this.packages = this.packagesService.packages;
-  }
-
-  ngOnInit(): void {
   }
 
   displayPackage(pkg: Package): void {

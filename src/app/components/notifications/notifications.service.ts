@@ -9,7 +9,7 @@ export class NotificationsService {
   #fetchNotifications(): string[] {
     return [
       'Pickup has been approved!',
-      "You've been paid $ 6.25!"
+      'You\'ve been paid $ 6.25!'
     ];
   }
 

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PackagesService } from '../packages/packages.service';
-import { Package } from './package'
+import { Package } from './package';
 
 @Component({
   selector: 'app-package',
