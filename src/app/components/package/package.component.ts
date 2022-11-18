@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PackagesService } from '../packages/packages.service';
-import { Package } from './package';
+import { PackageInterface } from '../../models/package.interface';
 
 @Component({
   selector: 'app-package',
@@ -10,11 +10,9 @@ import { Package } from './package';
 })
 export class PackageComponent implements OnInit {
 
-  packagesService: PackagesService;
-  @Input() package: Package | undefined;
+  @Input() package: PackageInterface | undefined;
 
-  constructor(private route: ActivatedRoute) {
-    this.packagesService = new PackagesService();
+  constructor(private readonly route: ActivatedRoute, private readonly packagesService: PackagesService) {
   }
 
   ngOnInit(): void {

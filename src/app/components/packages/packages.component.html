@@ -15,6 +15,6 @@
   <app-package-card class="column is-one-quarter-desktop is-one-third is-clickable"
                     *ngFor="let pkg of packages"
                     [package]="pkg"
-                    (click)="displayPackage(pkg)">
+                    (click)="routePackage(pkg)">
   </app-package-card>
 </div>

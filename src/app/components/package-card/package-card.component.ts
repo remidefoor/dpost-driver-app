@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Package } from '../package/package';
+import { PackageInterface } from '../../models/package.interface';
 
 @Component({
   selector: 'app-package-card',
@@ -8,7 +8,7 @@ import { Package } from '../package/package';
 })
 export class PackageCardComponent {
 
-  @Input() package: Package | undefined;
+  @Input() package: PackageInterface | undefined;
 
   constructor() {
   }

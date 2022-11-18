@@ -1,13 +1,17 @@
-import { Package } from '../package/package';
+import { Injectable } from '@angular/core';
+import { PackageInterface } from '../../models/package.interface';
 
+@Injectable({
+  providedIn: 'root'
+})
 export class PackagesService {
-  readonly packages: Package[];
+  readonly packages: PackageInterface[];
 
   constructor() {
     this.packages = this.fetchPackages();
   }
 
-  private fetchPackages(): Package[] {
+  private fetchPackages(): PackageInterface[] {
     return [
       {
         id: 1,
@@ -117,7 +121,7 @@ export class PackagesService {
     ];
   }
 
-  getPackage(packageId: number): Package | undefined {
+  getPackage(packageId: number): PackageInterface | undefined {
     return this.packages.find(pkg => pkg.id === packageId);
   }
 

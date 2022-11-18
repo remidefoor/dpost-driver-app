@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Package } from '../package/package';
-import { PackagesService } from './packages.service';
+import { PackageInterface } from '../../models/package.interface';
+import { PackagesService } from "./packages.service";
 
 @Component({
   selector: 'app-packages',
@@ -10,15 +10,13 @@ import { PackagesService } from './packages.service';
 })
 export class PackagesComponent {
 
-  packagesService: PackagesService;
-  packages: Package[];
+  packages: PackageInterface[];
 
-  constructor(private router: Router) {
-    this.packagesService = new PackagesService();
-    this.packages = this.packagesService.packages;
+  constructor(private readonly router: Router, private readonly packagesService: PackagesService) {
+    this.packages = packagesService.packages;
   }
 
-  displayPackage(pkg: Package): void {
+  routePackage(pkg: PackageInterface): void {
     this.router.navigate(['/packages', pkg.id]);
   }
 
