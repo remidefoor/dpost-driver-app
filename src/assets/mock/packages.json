@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "size": "Small",
+    "scr": "Dome 9 H1B",
+    "dest": "Dome 9 H11",
+    "fee": 1.50
+  },
+  {
+    "id": 2,
+    "size": "Small",
+    "scr": "Dome 9 H19",
+    "dest": "Dome 9 H113",
+    "fee": 1.75
+  },
+  {
+    "id": 3,
+    "size": "Letter",
+    "scr": "Dome 11 H19",
+    "dest": "Dome 9 H113",
+    "fee": 2.25
+  },
+  {
+    "id": 4,
+    "size": "Large",
+    "scr": "Dome 9 H3",
+    "dest": "Dome 11 H97",
+    "fee": 3.0
+  },
+  {
+    "id": 5,
+    "size": "Small",
+    "scr": "Dome 9 H1B",
+    "dest": "Dome 9 H11",
+    "fee": 1.50
+  },
+  {
+    "id": 6,
+    "size": "Small",
+    "scr": "Dome 9 H19",
+    "dest": "Dome 9 H113",
+    "fee": 1.75
+  },
+  {
+    "id": 7,
+    "size": "Letter",
+    "scr": "Dome 11 H19",
+    "dest": "Dome 9 H113",
+    "fee": 2.25
+  },
+  {
+    "id": 8,
+    "size": "Large",
+    "scr": "Dome 9 H3",
+    "dest": "Dome 11 H97",
+    "fee": 3.0
+  },
+  {
+    "id": 9,
+    "size": "Small",
+    "scr": "Dome 9 H1B",
+    "dest": "Dome 9 H11",
+    "fee": 1.50
+  },
+  {
+    "id": 10,
+    "size": "Small",
+    "scr": "Dome 9 H19",
+    "dest": "Dome 9 H113",
+    "fee": 1.75
+  },
+  {
+    "id": 11,
+    "size": "Letter",
+    "scr": "Dome 11 H19",
+    "dest": "Dome 9 H113",
+    "fee": 2.25
+  },
+  {
+    "id": 12,
+    "size": "Large",
+    "scr": "Dome 9 H3",
+    "dest": "Dome 11 H97",
+    "fee": 3.0
+  },
+  {
+    "id": 13,
+    "size": "Small",
+    "scr": "Dome 9 H1B",
+    "dest": "Dome 9 H11",
+    "fee": 1.50
+  },
+  {
+    "id": 14,
+    "size": "Small",
+    "scr": "Dome 9 H19",
+    "dest": "Dome 9 H113",
+    "fee": 1.75
+  },
+  {
+    "id": 15,
+    "size": "Letter",
+    "scr": "Dome 11 H19",
+    "dest": "Dome 9 H113",
+    "fee": 2.25
+  }
+]
