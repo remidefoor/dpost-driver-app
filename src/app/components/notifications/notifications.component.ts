@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NotificationsService } from './notifications.service';
+import { NotificationsService } from "../../services/notifications.service";
 
 @Component({
   selector: 'app-notifications',
@@ -10,8 +10,8 @@ export class NotificationsComponent {
 
   notifications: string[];
 
-  constructor() {
-    this.notifications = new NotificationsService().notifications;
+  constructor(private readonly notificationService: NotificationsService) {
+    this.notifications = notificationService.notifications;
   }
 
 }
