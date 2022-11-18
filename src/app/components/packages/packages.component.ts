@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { PackageInterface } from '../../models/package.interface';
-import { PackagesService } from "./packages.service";
+import { PackagesService } from './packages.service';
 
 @Component({
   selector: 'app-packages',

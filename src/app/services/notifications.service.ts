@@ -14,7 +14,7 @@ export class NotificationsService {
 
   private listenForNotifications(): void {
     this.notifications.push('Pickup has been approved!');
-    this.notifications.push('You\'ve been paid $ 6.25!')
+    this.notifications.push('You\'ve been paid $ 6.25!');
   }
 
 }
