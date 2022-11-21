@@ -10,16 +10,26 @@
   <router-outlet></router-outlet>
 </main>
 
-<nav class="navbar is-fixed-bottom is-primary">
-  <div class="navbar-menu is-active">
-    <div class="container navbar-start">
-      <div class="navbar-item is-expanded is-tab icon is-large is-clickable">
-        <i class="material-symbols-rounded" routerLink="/notifications">notifications</i>
-      </div>
+<nav class="navbar is-fixed-bottom is-primary" role="navigation">
+  <div class="navbar-brand is-hidden-desktop">
+    <a class="navbar-item is-expanded is-block has-text-centered" routerLink="/notifications">
+      <i class="material-symbols-rounded">notifications</i>
+    </a>
 
-      <div class="navbar-item is-expanded is-tab icon is-large is-clickable">
-        <i class="material-symbols-rounded" routerLink="/">package</i>
-      </div>
+    <a class="navbar-item is-expanded is-block has-text-centered" routerLink="/packages">
+      <i class="material-symbols-rounded">package</i>
+    </a>
+  </div>
+
+  <div class="navbar-menu is-hidden-mobile">
+    <div class="container navbar-start">
+      <a class="navbar-item is-expanded is-block has-text-centered" routerLink="/notifications">
+        <i class="material-symbols-rounded">notifications</i>
+      </a>
+
+      <a class="navbar-item is-expanded is-block has-text-centered" routerLink="/packages">
+        <i class="material-symbols-rounded">package</i>
+      </a>
     </div>
   </div>
 </nav>
