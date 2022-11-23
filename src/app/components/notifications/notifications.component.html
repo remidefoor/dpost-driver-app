@@ -1,13 +1,13 @@
 <section>
   <h3 class="title is-4">Notifications</h3>
 
-  <button class="button is-warning is-light is-outlined">Clear all</button>
+  <button class="button is-warning is-light is-outlined" (click)="deleteNotifications()">Clear all</button>
 
   <div>
-    <div class="notification is-primary is-light" *ngFor="let notification of notifications">
+    <div class="notification is-primary is-light" *ngFor="let notification of notifications; index as i">
       <p>{{ notification }}</p>
 
-      <button class="delete"></button>
+      <button class="delete" (click)="deleteNotification(i)"></button>
     </div>
   </div>
 </section>

@@ -14,4 +14,12 @@ export class NotificationsComponent {
     this.notifications = notificationService.notifications;
   }
 
+  deleteNotifications(): void {
+    this.notifications.splice(0, this.notifications.length);
+  }
+
+  deleteNotification(i: number): void {
+    this.notifications.splice(i, 1);
+  }
+
 }
