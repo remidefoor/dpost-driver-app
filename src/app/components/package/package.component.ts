@@ -1,24 +1,22 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PackagesService } from '../packages/packages.service';
+import { Observable } from 'rxjs';
 import { PackageInterface } from '../../models/package.interface';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-package',
   templateUrl: './package.component.html',
   styleUrls: ['./package.component.css']
 })
-export class PackageComponent implements OnInit {
+export class PackageComponent {
 
-  @Input() package: PackageInterface | undefined;
+  package: Observable<PackageInterface>;
 
-  constructor(private readonly route: ActivatedRoute, private readonly packagesService: PackagesService) {
-  }
-
-  ngOnInit(): void {
+  constructor(private readonly route: ActivatedRoute, private readonly apiService: ApiService) {
     const routeParams = this.route.snapshot.paramMap;
     const packageId = Number(routeParams.get('packageId'));
-    this.package = this.packagesService.getPackage(packageId);
+    this.package = apiService.fetchPackage(packageId);
   }
 
 }

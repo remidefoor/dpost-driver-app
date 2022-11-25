@@ -8,9 +8,6 @@ import { PackageInterface } from '../../models/package.interface';
 })
 export class PackageCardComponent {
 
-  @Input() package: PackageInterface | undefined;
-
-  constructor() {
-  }
+  @Input() package: PackageInterface | null | undefined;
 
 }

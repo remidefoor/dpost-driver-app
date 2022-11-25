@@ -15,4 +15,8 @@ export class ApiService {
     return this.http.get<PackageInterface[]>('assets/mock/packages.json');
   }
 
+  fetchPackage(packageId: number): Observable<PackageInterface> {
+    return this.http.get<PackageInterface>('assets/mock/package.json');
+  }
+
 }
