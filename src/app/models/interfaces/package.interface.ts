@@ -1,4 +1,4 @@
-export interface PackageInterface {
+export interface Package {
   id: number,
   size: string,
   src: string,
