@@ -1,20 +1,26 @@
 import { Injectable } from '@angular/core';
-import { UserInterface } from '../models/user.interface';
+import { Person } from '../models/interfaces/person.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  readonly user: UserInterface;
+  readonly user: Person;
 
   constructor() {
     this.user = this.getUser();
   }
 
-  private getUser(): UserInterface {
+  private getUser(): Person {
     return {
-      id: 'ako-18'
+      marsId: 'ako-18',
+      address: {
+        address: '',
+        longitude: 3.26,
+        latitude: 50.82
+      },
+      walletAddress: ''
     };
   }
 
