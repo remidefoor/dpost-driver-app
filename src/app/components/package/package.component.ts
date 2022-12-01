@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { PackageInterface } from '../../models/package.interface';
+import { Package } from '../../models/interfaces/package.interface';
 import { ApiService } from '../../services/api.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { ApiService } from '../../services/api.service';
 })
 export class PackageComponent {
 
-  package: Observable<PackageInterface>;
+  package: Observable<Package>;
 
   constructor(private readonly route: ActivatedRoute, private readonly apiService: ApiService) {
     const routeParams = this.route.snapshot.paramMap;

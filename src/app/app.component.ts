@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UserInterface } from './models/user.interface';
+import { Person } from './models/interfaces/person.interface';
 import { UserService } from './services/user.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { UserService } from './services/user.service';
 })
 export class AppComponent {
 
-  user: UserInterface;
+  user: Person;
 
   constructor(private readonly userService: UserService) {
     this.user = userService.user;

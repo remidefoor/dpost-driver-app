@@ -10,6 +10,7 @@ import { PackageCardComponent } from './components/package-card/package-card.com
 import { PackagesComponent } from './components/packages/packages.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { PackageComponent } from './components/package/package.component';
+import { DeliveryComponent } from './components/delivery/delivery.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PackageComponent } from './components/package/package.component';
     PackageCardComponent,
     PackagesComponent,
     NotificationsComponent,
-    PackageComponent
+    PackageComponent,
+    DeliveryComponent
   ],
   imports: [
     BrowserModule,
