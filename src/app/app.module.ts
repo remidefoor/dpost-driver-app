@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { environment } from '../environments/environment';
+import { environment } from '../environments/environment.prod';
 import { AngularFireModule } from '@angular/fire/compat';
 import { QRCodeModule } from 'angularx-qrcode';
 
