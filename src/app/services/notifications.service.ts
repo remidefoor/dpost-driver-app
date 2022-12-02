@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import { io, Socket } from 'socket.io-client';
+import {UserService} from './user.service';
+import {Delivery} from '../models/interfaces/delivery.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -11,15 +13,15 @@ export class NotificationsService {
 
   notifications: string[];
 
-  notification: BehaviorSubject<any>;
+  notification: Subject<Delivery>;
 
-  constructor() {
+  constructor(private readonly userService: UserService) {
     this.socket = io('https://state-notifier.dpost.online/');
 
     this.notifications = [];
     this.listenForNotifications();
 
-    this.notification = new BehaviorSubject('');
+    this.notification = new Subject();
   }
 
   private listenForNotifications(): void {
@@ -28,11 +30,11 @@ export class NotificationsService {
   }
 
   register(): void {
-    this.socket.emit('hello', { clientId: 'ako-18' });
+    this.socket.emit('hello', { clientId: this.userService.user.marsId });
   }
 
-  getNotification = (): Observable<any> => {
-    this.socket.on('stateChange', (notification: any) => {
+  getNotification = (): Observable<Delivery> => {
+    this.socket.on('stateChange', (notification: Delivery) => {
       this.notification.next(notification);
     });
     return this.notification.asObservable();

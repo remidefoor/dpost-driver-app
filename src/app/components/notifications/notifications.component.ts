@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Delivery} from '../../models/interfaces/delivery.interface';
 import { NotificationsService } from '../../services/notifications.service';
 
 @Component({
@@ -10,18 +11,16 @@ export class NotificationsComponent implements OnInit{
 
   notifications: string[];
 
-  notificationList: any[];
+  notificationList: Delivery[];
 
-  constructor(private readonly notificationService: NotificationsService) {
-    this.notifications = notificationService.notifications;
+  constructor(private readonly notificationsService: NotificationsService) {
+    this.notifications = notificationsService.notifications;
 
     this.notificationList = [];
   }
 
   ngOnInit() {
-    console.log('register');
-    this.notificationService.register();
-    this.notificationService.getNotification().subscribe((notification: any) => {
+    this.notificationsService.getNotification().subscribe((notification: Delivery) => {
       console.log(notification);
       this.notificationList.push(notification);
     });
