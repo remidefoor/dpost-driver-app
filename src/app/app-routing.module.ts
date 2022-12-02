@@ -8,7 +8,7 @@ import { NotificationsComponent } from './components/notifications/notifications
 const routes: Routes = [
   { path: 'packages', component: PackagesComponent },
   { path: 'packages/:packageId', component: PackageComponent },
-  { path: 'delivery', component: DeliveryComponent },
+  { path: 'deliveries/:deliveryId', component: DeliveryComponent },
   { path: 'notifications', component: NotificationsComponent },
   { path: '', redirectTo: '/packages', pathMatch: 'full' }
 ];

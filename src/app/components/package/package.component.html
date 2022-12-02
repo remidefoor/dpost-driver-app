@@ -1,9 +1,9 @@
 <p class="block">Accept to deliver package</p>
 
-<app-package-card [package]="package | async"></app-package-card>
+<app-package-card [package]="package"></app-package-card>
 
 <div class="buttons is-right mt-4">
   <button class="button is-danger is-light is-outlined" routerLink="/packages">Cancel</button>
 
-  <button class="button is-primary is-light is-outlined" routerLink="/delivery">Confirm</button>
+  <button class="button is-primary is-light is-outlined" (click)="applyForPackage()">Confirm</button>
 </div>

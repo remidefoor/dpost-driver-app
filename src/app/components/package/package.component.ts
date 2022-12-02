@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
+import {ActivatedRoute, Router} from '@angular/router';
 import { Package } from '../../models/interfaces/package.interface';
+import {DeliveryPostBody} from '../../models/interfaces/delivery-post-body.interface';
+import {UserService} from '../../services/user.service';
 import { ApiService } from '../../services/api.service';
 
 @Component({
@@ -11,12 +12,28 @@ import { ApiService } from '../../services/api.service';
 })
 export class PackageComponent {
 
-  package: Observable<Package>;
+  package: Package | undefined;
 
-  constructor(private readonly route: ActivatedRoute, private readonly apiService: ApiService) {
+  constructor(private readonly router: Router,
+              private readonly route: ActivatedRoute,
+              private readonly userService: UserService,
+              private readonly apiService: ApiService,) {
     const routeParams = this.route.snapshot.paramMap;
     const packageId = Number(routeParams.get('packageId'));
-    this.package = apiService.fetchPackage(packageId);
+    this.apiService.fetchPackage(packageId)
+      .subscribe(pkg => this.package = pkg);
+  }
+
+  private createDeliveryPostBody(): DeliveryPostBody {
+    return {
+      packageId: this.package!.id,
+      driverId: this.userService.user.marsId
+    }
+  }
+
+  applyForPackage(): void {
+    this.apiService.postDelivery(this.createDeliveryPostBody())
+      .subscribe(delivery => this.router.navigate(['deliveries', delivery.id]));
   }
 
 }
