@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
+import { QRCodeModule } from 'angularx-qrcode';
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
 import { PackageCardComponent } from './components/package-card/package-card.component';
 import { PackagesComponent } from './components/packages/packages.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
@@ -25,7 +26,8 @@ import { DeliveryComponent } from './components/delivery/delivery.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    QRCodeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

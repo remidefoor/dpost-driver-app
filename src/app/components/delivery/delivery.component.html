@@ -2,6 +2,10 @@
 
 <app-package-card [package]="delivery?.package"></app-package-card>
 
-<div class="buttons is-centered mt-4">
+<p class="block">Drive to the pickup location and show the QR code to the sender</p>
+
+<qrcode class="block" *ngIf="delivery" [qrdata]="delivery.package.id.toString()" [width]="qrCodeWidth" [errorCorrectionLevel]="qrCodeErrorCorrectionLevel"></qrcode>
+
+<div class="block buttons is-centered">
   <button class="button is-primary is-light is-outlined">Send pickup location to car</button>
 </div>
