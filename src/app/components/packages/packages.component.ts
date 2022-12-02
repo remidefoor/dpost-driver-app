@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { Package } from '../../models/interfaces/package.interface';
 import { ApiService } from '../../services/api.service';
 
@@ -11,10 +10,11 @@ import { ApiService } from '../../services/api.service';
 })
 export class PackagesComponent {
 
-  packages: Observable<Package[]>;
+  packages: Package[] | undefined;
 
   constructor(private readonly router: Router, private readonly apiService: ApiService) {
-    this.packages = apiService.fetchPackages();
+    this.apiService.fetchPackages()
+      .subscribe(packages => this.packages = packages);
   }
 
   routePackage(pkg: Package): void {
