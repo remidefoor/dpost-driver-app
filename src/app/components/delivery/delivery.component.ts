@@ -15,7 +15,7 @@ export class DeliveryComponent {
   constructor(private readonly route: ActivatedRoute, private readonly apiService: ApiService) {
     const routeParams = this.route.snapshot.paramMap;
     const deliveryId = Number(routeParams.get('deliveryId'));
-    this.apiService.fetchDelivery(deliveryId)
+    this.apiService.getDelivery(deliveryId)
       .subscribe(delivery => this.delivery = delivery);
   }
 

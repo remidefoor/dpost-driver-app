@@ -20,7 +20,7 @@ export class PackageComponent {
               private readonly apiService: ApiService,) {
     const routeParams = this.route.snapshot.paramMap;
     const packageId = Number(routeParams.get('packageId'));
-    this.apiService.fetchPackage(packageId)
+    this.apiService.getPackage(packageId)
       .subscribe(pkg => this.package = pkg);
   }
 

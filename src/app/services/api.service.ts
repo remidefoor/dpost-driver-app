@@ -13,11 +13,11 @@ export class ApiService {
   constructor(private readonly http: HttpClient) {
   }
 
-  fetchPackages(): Observable<Package[]> {
+  getPackages(): Observable<Package[]> {
     return this.http.get<Package[]>('https://api.dpost.online/packages');
   }
 
-  fetchPackage(packageId: number): Observable<Package> {
+  getPackage(packageId: number): Observable<Package> {
     return this.http.get<Package>(`https://api.dpost.online/packages/${packageId}`);
   }
 
@@ -25,7 +25,7 @@ export class ApiService {
     return this.http.post<Delivery>('https://api.dpost.online/deliveries', deliveryPost);
   }
 
-  fetchDelivery(deliveryId: number): Observable<Delivery> {
+  getDelivery(deliveryId: number): Observable<Delivery> {
     return this.http.get<Delivery>(`https://api.dpost.online/deliveries/${deliveryId}`);
   }
 

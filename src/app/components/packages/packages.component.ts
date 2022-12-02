@@ -13,7 +13,7 @@ export class PackagesComponent {
   packages: Package[] | undefined;
 
   constructor(private readonly router: Router, private readonly apiService: ApiService) {
-    this.apiService.fetchPackages()
+    this.apiService.getPackages()
       .subscribe(packages => this.packages = packages);
   }
 
