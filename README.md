@@ -1,31 +1,63 @@
-# DriverApp
+# Driver App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.8.
+## Description
 
-## Development server
+The Driver App is a microfrontend developed for the dPost driver community.  
+Drivers can search for packages that need delivery, based on location.  
+Once a suitable package is found the driver can select it for pickup.  
+Then, the app guides the driver through the complete delivery process.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Technology Stack
 
-## Code scaffolding
+#### Angular
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The frontend is created using Angular, a TypeScript-based free and open-source web application framework.
 
-## Build
+#### Bulma
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+The CSS framework Bulma is used to achieve a consistent design accross multiple applications.
 
-## Running unit tests
+### Deployment
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+The microfrontend is deployed on Firebase and publicly available at [ttsd-dpost.web.app](https://ttsd-dpost.web.app/).
 
-## Running end-to-end tests
+Please refer to the [Usage](#usage) section to understand how to use the service.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Installation
 
-## Further help
+### Requirements
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Node.js
+- npm
 
-## Deployment
+### Dependencies
 
-Run `firebase deploy --only hosting:ttsd-dpost` to deploy the application to Firebase.
+To install the required packages, run the following command:
+
+`npm install`
+
+### Run the project
+
+To run the web application locally, issue the following command:
+
+`npm start`
+
+The app is now accessible on [localhost:4200](http://localhost:4200/).
+
+### Build the project (optional)
+
+If desired, the project can also be built and deployed somewhere else.  
+This can be achieved with the following command:
+
+`npm run build`
+
+This compiles the application into the **dist** directory.
+
+## Usage
+
+The usage of the application should be quite straight forward.  
+The flow from the [description](#description) can easily be tested out.
+
+### License
+
+This project is licensed under the GNU General Public License v3.0.
