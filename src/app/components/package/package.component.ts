@@ -28,7 +28,7 @@ export class PackageComponent {
     return {
       packageId: this.package!.id,
       driverId: this.userService.user.marsId
-    }
+    };
   }
 
   applyForPackage(): void {
