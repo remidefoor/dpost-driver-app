@@ -9,20 +9,15 @@ import { NotificationsService } from '../../services/notifications.service';
 })
 export class NotificationsComponent implements OnInit{
 
-  notifications: string[];
-
-  notificationList: Delivery[];
+  notifications: Delivery[];
 
   constructor(private readonly notificationsService: NotificationsService) {
-    this.notifications = notificationsService.notifications;
-
-    this.notificationList = [];
+    this.notifications = [];
   }
 
   ngOnInit() {
     this.notificationsService.getNotification().subscribe((notification: Delivery) => {
-      console.log(notification);
-      this.notificationList.push(notification);
+      this.notifications.push(notification);
     });
   }
 

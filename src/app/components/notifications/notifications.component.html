@@ -4,8 +4,8 @@
   <button class="block button is-warning is-light is-outlined" (click)="deleteNotifications()">Clear all</button>
 
   <div>
-    <div class="notification is-primary is-light" *ngFor="let notification of notificationList; index as i">
-      <p>{{ notification.state }}</p>
+    <div class="notification is-primary is-light" *ngFor="let notification of notifications; index as i">
+      <p>The state of your delivery changed to {{ notification.state }}</p>
 
       <button class="delete" (click)="deleteNotification(i)"></button>
     </div>

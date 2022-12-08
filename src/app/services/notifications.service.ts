@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Observable, Subject} from 'rxjs';
 import { io, Socket } from 'socket.io-client';
+import {environment} from '../../environments/environment.prod';
 import {UserService} from './user.service';
 import {Delivery} from '../models/interfaces/delivery.interface';
 
@@ -9,35 +10,31 @@ import {Delivery} from '../models/interfaces/delivery.interface';
 })
 export class NotificationsService {
 
+  URL: string;
+  REGISTER_EVT: string;
+  STATE_CHANGE_EVT: string;
+
   socket: Socket;
-
-  notifications: string[];
-
-  notification: Subject<Delivery>;
+  notifications: Subject<Delivery>;
 
   constructor(private readonly userService: UserService) {
-    this.socket = io('https://state-notifier.dpost.online/');
+    this.URL = environment.stateNotifierUrl || 'https://state-notifier.dpost.online/';
+    this.REGISTER_EVT = 'hello';
+    this.STATE_CHANGE_EVT = 'stateChange';
 
-    this.notifications = [];
-    this.listenForNotifications();
-
-    this.notification = new Subject();
-  }
-
-  private listenForNotifications(): void {
-    this.notifications.push('Pickup has been approved!');
-    this.notifications.push('You\'ve been paid $ 6.25!');
+    this.socket = io(this.URL);
+    this.notifications = new Subject();
   }
 
   register(): void {
-    this.socket.emit('hello', { clientId: this.userService.user.marsId });
+    this.socket.emit(this.REGISTER_EVT, { clientId: this.userService.user.marsId });
   }
 
   getNotification = (): Observable<Delivery> => {
-    this.socket.on('stateChange', (notification: Delivery) => {
-      this.notification.next(notification);
+    this.socket.on(this.STATE_CHANGE_EVT, (notification: Delivery) => {
+      this.notifications.next(notification);
     });
-    return this.notification.asObservable();
+    return this.notifications.asObservable();
   };
 
 }
