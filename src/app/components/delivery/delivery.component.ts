@@ -4,9 +4,6 @@ import {Delivery} from '../../models/interfaces/delivery.interface';
 import {QRCodeErrorCorrectionLevel} from 'angularx-qrcode';
 import {ApiService} from '../../services/api.service';
 
-const QR_CODE_WIDTH = 256;
-const QR_CODE_ERROR_CORRECTION_LEVEL = 'M';
-
 @Component({
   selector: 'app-delivery',
   templateUrl: './delivery.component.html',
@@ -24,8 +21,8 @@ export class DeliveryComponent {
     this.apiService.getDelivery(deliveryId)
       .subscribe(delivery => this.delivery = delivery);
 
-    this.qrCodeWidth = QR_CODE_WIDTH;
-    this.qrCodeErrorCorrectionLevel = QR_CODE_ERROR_CORRECTION_LEVEL;
+    this.qrCodeWidth = 256;
+    this.qrCodeErrorCorrectionLevel = 'M';
   }
 
 }
