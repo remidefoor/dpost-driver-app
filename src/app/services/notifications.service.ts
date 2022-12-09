@@ -5,6 +5,8 @@ import {environment} from '../../environments/environment.prod';
 import {UserService} from './user.service';
 import {Delivery} from '../models/interfaces/delivery.interface';
 
+// https://medium.com/@deguzmanbrianfrancis/setting-up-and-creating-a-chat-app-with-angular-socket-io-3-0-and-express-70c69b8031f6
+
 @Injectable({
   providedIn: 'root'
 })
