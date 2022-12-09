@@ -4,7 +4,10 @@
 
 <p class="block">Drive to the pickup location and show the QR code to the sender</p>
 
-<qrcode class="block" *ngIf="delivery" [qrdata]="delivery.package.id.toString()" [width]="QR_CODE_WIDTH" [errorCorrectionLevel]="QR_CODE_ERROR_CORRECTION_LEVEL"></qrcode>
+<div class="columns is-mobile is-centered">
+  <qrcode class="block" *ngIf="delivery" [qrdata]="delivery.package.id.toString()" [width]="QR_CODE_WIDTH"
+          [errorCorrectionLevel]="QR_CODE_ERROR_CORRECTION_LEVEL"></qrcode>
+</div>
 
 <div class="block buttons is-centered">
   <button class="button is-primary is-light is-outlined">Send pickup location to car</button>

@@ -18,7 +18,6 @@ export class ApiService {
   }
 
   getPackages(): Observable<Package[]> {
-    console.log(this.BASE_URL);
     return this.http.get<Package[]>(`${this.BASE_URL}/packages`);
   }
 
