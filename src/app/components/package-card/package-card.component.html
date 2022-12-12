@@ -1,11 +1,31 @@
 <article *ngIf="package" class="card content mb-4">
   <div class="card-content">
-    <p id="size">{{ package.size }}</p>
+    <div class="icon-text">
+      <span class="icon has-text-primary">
+        <i class="material-symbols-rounded">archive</i>
+      </span>
+      <span class="ml-1">{{ package.size }}</span>
+    </div>
 
-    <p id="src">From: {{ package.sender.address.address }}</p>
+    <div class="icon-text">
+      <span class="icon has-text-primary">
+        <i class="material-symbols-rounded">person</i>
+      </span>
+      <span class="ml-1"><span class="is-italic">From</span>: {{ (package.sender.address.address).slice(0, 20) }}</span>
+    </div>
 
-    <p id="dest">To: {{ package.receiver.address.address }}</p>
+    <div class="icon-text">
+      <span class="icon has-text-primary">
+        <i class="material-symbols-rounded">person</i>
+      </span>
+      <span class="ml-1"><span class="is-italic">To</span>: {{ (package.receiver.address.address).slice(0, 20) }}</span>
+    </div>
 
-    <p id="fee">$ {{ package.fee }}</p>
+    <div class="icon-text">
+      <span class="icon has-text-primary">
+        <i class="material-symbols-rounded">currency_bitcoin</i>
+      </span>
+      <span class="ml-1">{{ package.fee }}</span>
+    </div>
   </div>
 </article>
