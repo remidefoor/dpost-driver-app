@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { environment } from '../environments/environment.prod';
 import { AngularFireModule } from '@angular/fire/compat';
+import {FormsModule} from '@angular/forms';
 import { QRCodeModule } from 'angularx-qrcode';
 
 import { AppComponent } from './app.component';
@@ -22,13 +23,14 @@ import { DeliveryComponent } from './components/delivery/delivery.component';
     PackageComponent,
     DeliveryComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    QRCodeModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        FormsModule,
+        QRCodeModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

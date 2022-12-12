@@ -10,10 +10,16 @@ import { ApiService } from '../../services/api.service';
 })
 export class PackagesComponent {
 
+  range: number;
   packages: Package[] | undefined;
 
   constructor(private readonly router: Router, private readonly apiService: ApiService) {
-    this.apiService.getPackages()
+    this.range = 10;
+    this.getPackages();
+  }
+
+  getPackages(): void {
+    this.apiService.getPackages(this.range)
       .subscribe(packages => this.packages = packages);
   }
 

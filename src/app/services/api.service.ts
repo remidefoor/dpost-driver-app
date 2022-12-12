@@ -17,8 +17,8 @@ export class ApiService {
     this.BASE_URL = environment.apiBaseUrl || 'https://api.dpost.online/packages';
   }
 
-  getPackages(): Observable<Package[]> {
-    return this.http.get<Package[]>(`${this.BASE_URL}/packages`);
+  getPackages(range: number): Observable<Package[]> {
+    return this.http.get<Package[]>(`${this.BASE_URL}/packages?range=${range}`);
   }
 
   getPackage(packageId: number): Observable<Package> {
